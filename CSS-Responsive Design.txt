@@ -1,0 +1,198 @@
+Responsive Tasarım Nedir?
+
+Responsive web tasarımı yani duyarlı web tasarımı, kullanıcı web sitenizi bir bilgisayarda görüntülüyorken büyük ekrana, 
+bir akıllı telefonda görüntülüyorken küçük ekrana uyum sağlamasıdır.
+
+Özellikle akıllı telefon kullanımının artmasıyla önemi artan responsive tasarımda uyum sağlayabilmeniz gereken üç ekran tipi vardır; desktop (masaüstü), tablet ve mobil.  
+Bunların tamamına uyum sağlamak için web sitenizde her bir ekrana uygun ayrı HTML bulunması gerekmez, CSS(Cascading Style Sheets Türkçeleştirirsek Basamaklanmış Stil Katmanları) 
+ile web siteniz tek HTML kullanarak tüm ekranlara uyum sağlayabilir.
+
+Bunun için web sitenizdeki her içerik belirli katmanlarda oluşturulur ve ekranlar değiştiğinde web sitenizdeki içeriklerin yerleri ekran boyutunuza tam uyacak şekilde yeniden düzenlenir. 
+Örneğin masa üstü ekranda içerik metninin sağında bulunan görsel akıllı telefon ekranında içeriğin üst veya alt kısmında görünebilir. 
+Web sitenizin bunu otomatik olarak yapabiliyor olması onun “responsive” yani “duyarlı” olduğunu gösterir. 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Tasarım</title>
+
+    <style>
+        h1{
+            font-size: 60px;
+        }
+
+        /*maks genişlik 700 pikselden daha düşükse font'u 40px'e düşür ve rengini kırmızı yap.*/
+        @media screen and (max-width:700px) {
+            h1{
+                font-size: 40px;
+                color: red;
+            }
+        }
+        /*maks genişlik 400 pikselden daha düşükse font'u 20px'e düşür ve rengini mavi yap.*/
+        @media screen and (max-width:400px){
+            h1{
+                font-size: 20px;
+                color: blue;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+</body>
+</html>
+
+Div'ler ile kullanarak örnekleri genişletebiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Tasarım</title>
+
+    <style>
+        /*border'larında belirli bir hacim kapladığını düşünürsek tam olarak 25% elde edebilmek için
+        border'ların kapladığı alanı da kaldırmamız gerekiyor.*/
+        /* *{} tüm üyeleri kapsar.*/
+        *{
+            box-sizing: border-box;
+        }
+        
+        .kutu{
+            width: 25%;
+            height: 250px;
+            background: lightblue;
+            float: left;
+            border: 1px solid black;
+        }
+
+        @media screen and (max-width: 700px) {
+            .kutu{
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .kutu{
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+    <div class="kutu"></div>
+</body>
+</html>
+
+---------------------------------------
+
+Görsellerle Responsive Tasarım
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images</title>
+
+    <style>
+        /*sayfa boyutu yüklenen resmin çözünürlüğünü aştığında görüntüde esnetmeye bağlı pikselleşmeler
+        meydana gelir. sayfa resmin çözünürlüğüne eriştiğinde resmin büyümesini durdurmak
+        gereklidir.*/
+        /*
+        img{
+            width: 100%;
+            height: auto;
+        }
+        */
+        /*aşağıdaki gibi düzenlersek resmin kendi maks genişliğine kadar büyüyecektir.
+        sonra resmin genişlemesi duracaktır. */
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/manzara2.jpg" alt="">
+
+    <!-- büyümesi 500px ile de sınırlandırabiliriz. -->
+    <img src="images/manzara2.jpg" alt="" width="500">
+</body>
+</html>
+
+İki konuyu birleştirelim.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Tasarım</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .kutu{
+            width: 25%;
+            background: lightblue;
+            float: left;
+            border: 1px solid black;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .kutu{
+                width: 33.33%;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .kutu{
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .kutu{
+                width: 100%;
+            }
+        }
+        img{
+            max-width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="kutu">
+        <img src="images/manzara1.jpg" alt="">
+    </div>
+    <div class="kutu">
+        <img src="images/manzara2.jpg" alt="">
+    </div>
+    <div class="kutu">
+        <img src="images/manzara1.jpg" alt="">
+    </div>
+    <div class="kutu">
+        <img src="images/manzara2.jpg" alt="">
+    </div>
+    <div class="kutu">
+        <img src="images/manzara1.jpg" alt="">
+    </div>
+</body>
+</html>

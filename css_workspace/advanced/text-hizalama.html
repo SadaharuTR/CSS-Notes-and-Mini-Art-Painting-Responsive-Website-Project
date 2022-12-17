@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Hizalama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Rubik 80s Fade', cursive;
+            width: 900px;
+            margin: 40px;
+        }
+        p#paragraf1{
+            text-align: right;
+        }
+        p#paragraf2{
+            text-align: center;
+        }
+        p#paragraf3{
+            text-align: left;
+            border: 2px solid gray;
+            padding: 10px;
+            /*yazımızı birden fazla sütuna bölebiliriz.*/
+            column-count: 3;
+            /*aşağıdaki yapıyı belirttiğimiz tarayıcı uyumsuzluğu varsa giderebiliriz.*/
+            --webkit-column-count: 3;
+            /*mozilla uyumluluğu sağlama almak için.*/
+            -moz-column-count: 3;
+
+            /*aralarına çizgi çekebiliriz.*/
+            column-rule: 2px solid lightskyblue;
+            --webkit-column-rule: 2px solid lightskyblue;
+            -moz-column-rule: 2px solid lightskyblue;
+        }
+        p#paragraf4{
+            /*iki yana da yasla*/
+            text-align: justify;
+            /*paragrafa girinti ver.*/
+            text-indent: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Lorem ipsum dolor sit amet.
+    </h2>
+
+    <p id="paragraf1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+</body>
+</html>

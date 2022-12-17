@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+    <style>
+        div{
+            width: 800px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        p{
+            font-size: 22px;
+            text-align: center;
+            /*harfler arası boşluk*/
+            letter-spacing: 2px;
+            /*kelimeler arası boşluk*/
+            word-spacing: 3px;
+            /*satır arası boşluğu belirle.*/
+            line-height: 150%;
+        }
+        h2{
+            /*bütün ilk harfler büyüsün.*/
+            text-transform: capitalize;
+            /*tüm harfler küçük harf olsun.*/
+            text-transform: lowercase;
+            /*tüm harfler büyük harf olsun.*/
+            text-transform: uppercase;
+        }
+        span{
+            font-style: italic;
+            font-weight: bold;
+        }
+        a{
+            color:darkmagenta;
+            /*linkin altı çizili olmasın.*/
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+
+        <p>Lorem ipsum, dolor sit amet <span><a href=""> consectetur adipisicing elit.</a></span> Architecto natus voluptate ea reiciendis minus et fuga eius
+            numquam id cum?</p>
+    </div>
+</body>
+</html>

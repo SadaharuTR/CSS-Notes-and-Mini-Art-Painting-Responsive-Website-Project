@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Images</title>
+
+    <style>
+        img {
+            width: 500px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .bolum {
+            border: 1px solid red;
+            /*CSS "overflow" özelliği, bir alana sığmayacak kadar büyük içeriğe ne olacağını
+             kontrol eder. Auto diyerek otomatik ayarlanamsını isteyebiliriz.*/
+            overflow: auto;
+            /* resim ile çerçeve arasına boşluk için padding, */
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis?Modi praesentium dolore quaerat voluptatem
+        pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+
+    <div class="bolum">
+        <img src="images/manzara1.jpg" alt="">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non enim veritatis dolores perspiciatis dolorem totam
+        repellat
+        beatae nihil neque harum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolorum est iusto error maiores, quos
+        repudiandae
+        quam atque enim aliquid.
+    </div>
+</body>
+
+</html>

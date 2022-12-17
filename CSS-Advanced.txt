@@ -1,0 +1,1107 @@
+Ders 1: Floating Images
+
+CSS float özelliği web sayfalarında konulandırma ve düzen için kullanılır. Bir öğenin sayfa akışı içinde hangi yöne yaslanması gerektiğini ifade eder. 
+Ancak bunu yaparken öğelerin görüntülenme varsayılanlarını (blok veya satır içi) etkiler, sayfa akışını değiştirir. Bir HTML öğesi float özelliği aldığında, 
+öğeyi sayfa akışından çıkarır. Diğer öğeler ise float uygulanan öğenin varlığını görürerek etrafından akışına devam eder. 
+Bu çok yönlü çalışma şekli sayesinde oldukça fazla kullanım şekli ve alanı vardır.  
+
+Alabileceği dört farklı değer vardır;
+
+-left
+-right
+-none
+-inherit
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Images</title>
+
+    <style>
+        img {
+            width: 500px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .bolum {
+            border: 1px solid red;
+            /*CSS "overflow" özelliği, bir alana sığmayacak kadar büyük içeriğe ne olacağını
+             kontrol eder. Auto diyerek otomatik ayarlanamsını isteyebiliriz.*/
+            overflow: auto;
+            /* resim ile çerçeve arasına boşluk için padding, */
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis?Modi praesentium dolore quaerat voluptatem
+        pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsam ducimus assumenda?
+        Modi praesentium dolore quaerat voluptatem pariatur molestiae quis? Lorem ipsum dolor sit amet, consectetur
+        adipisicing
+        elit. Vitae ratione possimus, cumque maxime deserunt placeat molestiae aliquam adipisci veritatis in.</p>
+
+    <div class="bolum">
+        <img src="images/manzara1.jpg" alt="">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non enim veritatis dolores perspiciatis dolorem totam
+        repellat
+        beatae nihil neque harum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolorum est iusto error maiores, quos
+        repudiandae
+        quam atque enim aliquid.
+    </div>
+</body>
+
+</html>
+
+----------------------------------
+
+Ders 2: Floating Divs
+
+Div'ler ile de Float özelliğini kullanabiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Divs</title>
+
+    <style>
+
+        #container{
+
+            background: gray;
+            width: auto;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            overflow: auto;
+        }
+        #birinci{
+            background: blue;
+            float: left;
+        }
+        #ikinci{
+            background: coral;
+            float: left;
+        }
+        #ucuncu{
+            background: darkcyan;
+            float: left;
+        }
+        #dorduncu{
+            background: yellowgreen;
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="birinci"></div>
+        <div id="ikinci"></div>
+        <div id="ucuncu"></div>
+        <div id="dorduncu"></div>
+    </div>
+</body>
+</html>
+
+-----------------------------------------------
+
+Ders 3: Display Özelliği
+
+CSS display özelliği bir öğenin nasıl görüntüleneceğini belirtir. Sayfanın akışı HTML öğelerinin yerleşimi ile olur. 
+Belirtildiği gibi, her öğenin varsayılan görüntü değeri vardır. Ancak özgün tasarımlarımızı yapabilmek için öğelerin bu varsayılan görüntü değerlerini değiştirmemiz gerektiği 
+durumlar olabilir. Böyle durumlarda display özelliği kullanılarak örneğin satır içi bir öğeyi bir blok öğesine veya tersine değiştirme, sayfayı belirli bir şekilde görünmesi 
+için yararlı olabilir. display özelliğinin alabileceği değerler aşağıda verilmiştir.
+
+-none
+-inline
+-block
+-inline-block
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulgar Display of Power</title>
+
+    <style>
+        div{
+            width: 250px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- kutularda div oldukları yani blok özellik gösterdikleri için default olarak alt alta
+    yerleştiğini görürüz. -->
+    <div id="kutu1">Kutu 1</div>
+    <div id="kutu2">Kutu 2</div>
+
+    <!-- fakat link etiketlerine baktığımızda bunların inline oldukları için yanyana olduklarını
+    görüyoruz. -->
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    <a href="">Link 3</a>
+
+    <!-- biz henüz display'lerini ayarlamamamıza rağmen div'lerimiz blok, link'lerimiz ve span
+    inline şekline default display özelliklerini gösterdiler. -->
+
+    <br><br>
+
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+
+</body>
+</html>
+
+Bunları değiştirebiliriz!
+
+Mesela link'lerimizi blok ya da div'lerimizi inline haline getirebiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulgar Display of Power</title>
+
+    <style>
+        div{
+            /*inline olarak belirtilen ögelerde width ve height özelliklerini değiştiremeyiz.
+            sabit kalırlar. içerisindeki yazının kapladığı boyuta göre otomatik ayarlar.*/
+            /* width: 250px;
+            height: 100px; */
+            background-color: lightblue;
+            margin: 5px;
+            display: inline;
+        }
+
+        a{
+            display: block;
+        }
+
+        span{
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="kutu1">Kutu 1</div>
+    <div id="kutu2">Kutu 2</div>
+
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    <a href="">Link 3</a>
+
+    <br><br>
+
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+
+</body>
+</html>
+
+Hem inline hem block özellik kazandırabiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulgar Display of Power</title>
+
+    <style>
+        div{
+            /*hem inline hem blok olarak belirtebiliriz. bu sayede width ve height
+            özelliklerini de kullanabiliriz. Sayfayı yeterince genişlettiğimizde hem yanyana
+            geldiklerini hem de içerisindeki yazıdan bağımsız olarak boyutlandırma yapabiliyoruz.*/
+            width: 400px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        a{
+            display: block;
+        }
+
+        span{
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- kutularda div oldukları yani blok özellik gösterdikleri için default olarak alt alta
+    yerleştiğini görürüz. -->
+    <div id="kutu1">Kutu 1</div>
+    <div id="kutu2">Kutu 2</div>
+
+    <!-- fakat link etiketlerine baktığımızda bunların inline oldukları için yanyana olduklarını
+    görüyoruz.  -->
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    <a href="">Link 3</a>
+
+    <!-- biz henüz display'lerini ayarlamamamıza rağmen div'lerimiz blok, link'lerimiz ve span
+    inline şekline default display özelliklerini gösterdiler. -->
+
+    <br><br>
+
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+
+</body>
+</html>
+
+
+display'in none özelliği ile de görünmez hale getirebiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulgar Display of Power</title>
+
+    <style>
+        div{            
+            width: 400px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 5px;
+        }
+
+        a{
+            display: block;
+        }
+
+        span{
+            display: block;
+        }
+        /* kutu1'i görünmez yaptığımız için ekranda sadece kutu2 kalacaktır. */
+        #kutu1{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="kutu1">Kutu 1</div>
+    <div id="kutu2">Kutu 2</div>
+    
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    <a href="">Link 3</a>
+
+    <br><br>
+
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+    <span>Lorem ipsum dolor sit amet consectetur.</span>
+
+</body>
+</html>
+
+
+--------------------------------------------
+
+Position Özellikleri
+
+CSS'de "position" özelliği, bir etiket için kullanılan konumlandırma yönteminin türünü belirtir.
+
+Beş farklı position değeri vardır:
+
+-absolute
+-fixed
+-static
+-relative
+-sticky
+
+- Bir nesneye position:relative; dediğimizde nesne gene normal akış içerisinde olmaya devam eder ancak top, right, bottom ve left özelliklerini kullanma fırsatı verir.
+
+		#kutu1{
+            background: lightcoral;
+        }
+        #kutu2{
+            background: lightgreen;
+        }
+        #kutu3{
+            background: lightskyblue;
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+		
+- CSS'de "position:absolute" özelliğine sahip bir etiket, en yakın konumlandırılmış ata etikete göre konumlandırılır (fixed gibi, görüntü alanına göre konumlandırılmaz).
+Ancak; absolute konumlandırılmış bir öğenin konumlandırılmış üst etiketi yoksa, body etiketine göre kullanılır ve sayfa kaydırmayla birlikte hareket eder.
+
+
+        #kutu1{
+            background: lightcoral;
+        }
+        #kutu2{
+            background: lightgreen;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        #kutu3{
+            background: lightskyblue;
+            
+        }
+
+- CSS'de "position:fixed" özelliğine sahip etiket, görüntü alanına göre konumlandırılmıştır, yani sayfa kaydırılmış olsa bile her zaman aynı yerde kalır. 
+top, bottom, left ve right gibi özellikler, öğeyi konumlandırmak için kullanılır.
+Sabit (Fixed) bir etiket, sayfada normalde bulunduğu yerde boşluk bırakmaz.
+
+
+        #kutu1{
+            background: lightcoral;
+        }
+        #kutu2{
+            background: lightgreen;
+        }
+        #kutu3{
+            background: lightskyblue;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+- Position: sticky kaydırma çubuklarını takip eder ve istenilen pozisyon yakalandığında nesneyi o noktada sabitler. 
+Örneğin bir nesne için yukarıdan 0 konumuna geldiğimiz anda nesnenin sabitlenmesini isteyebiliriz. Genelde menüler için sticky postion kullanılır.
+
+
+
+        #kutu1 {
+            background: lightcoral;
+            width: 100%;
+            position: sticky;
+            top: 50px;
+        }
+        #kutu2 {
+            background: lightgreen;
+        }
+        #kutu3 {
+            background: lightskyblue;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+		
+Ortak kod alanı:
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga perspiciatis eos, iste animi laborum qui dolorem
+        nemo architecto! Laudantium, eum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga perspiciatis eos, iste animi laborum qui dolorem
+        nemo architecto! Laudantium, eum.</p>
+    
+    <div class="kutu" id="kutu1">Kutu 1</div>
+    <div class="kutu" id="kutu2">Kutu 2</div>
+    <div class="kutu" id="kutu3">Kutu 3</div>
+    <div style="height: 3000px;"></div>
+</body>
+
+--------------------------------------------
+
+Margin Kullanımı
+
+CSS margin özelliği, tanımlanmış sınırların dışında, etiketlerin etrafında boşluk oluşturmak için kullanılır.
+
+CSS, bir etiketin tüm kenarları için "margin" özelliği sunmaktadır :
+
+-margin-top
+-margin-left
+-margin-right
+-margin-bottom
+
+ya da saat yönünde ilerleyecek şekilde tek satırda;
+
+			.kutu {
+            width: 150px;
+            height: 150px;
+            float: left;
+            /*      top  right bottom left*/
+            margin: 50px 100px 50px 20px;
+			}
+			
+olarak da belirtilebilir.
+
+aşağıda ise üst ve alttan 200px'lik sağdan ve soldan 50px'lik boşluk bırak demiş olduk.
+
+        #kutu1 {
+            background: lightcoral;
+            margin: 200px 50px;
+        }
+		
+Bu CSS özelliklerinin alabileceği değerleri şunlardır : 
+
+auto - tarayıcı otomatik hesaplar: CSS'de bir etiketi üst etiketine göre ortalamak istediğimizde "margin:auto" ifadesini kullanabiliriz.
+
+        #kutu2 {
+            background: lightgreen;
+            margin: auto;
+        }
+
+inline yapılarda sadece sağdan ve soldan boşluk bırakılabilir. Ekranda 1'sin solunda 50 px, 2 ve 3'ün sağı ve solunda 100px ve 4'ün sağında 50px boşluk bırakılacaktır.
+
+		span{
+            margin: 50px;
+        }
+		
+fakat display özelliğini kullanarak üst ve alttan da boşluk bırakmasını sağlayabiliriz.
+
+
+        span{
+            margin: 50px;
+            background: lightcoral;
+            display: inline-block;
+        }
+		
+Ortak kod alanı:
+<body>
+   
+    <div class="kutu" id="kutu1">Kutu 1</div>
+    <div class="kutu" id="kutu2">Kutu 2</div>
+    <div class="kutu" id="kutu3">Kutu 3</div>
+
+    <span>1</span><span>2</span><span>3</span><span>4</span>
+    
+</body>
+
+------------------
+
+Padding Kullanımı
+
+CSS'te padding özelliğini içeriğin etrafında boşluk oluşturmak için kullanırız. CSS ile padding üzerinde tam kontrol sahibi oluruz. 
+Bir HTML öğesinin her tarafına(sağ, sol, üst, alt) padding ayarlayabiliriz. CSS'te bir HTML öğesinin her bir yanına padding verilebilir.
+
+Dört bir yandan 20px boşluk verilecektir fakat bu boşluk kutumuzun kendi boyutunu da arttıracaktır. 100px yukarıdan 100px aşağıdan toplam 200px'lik
+bir boyut artışı olacaktır.
+
+        #kutu1 {
+            background: lightcoral;
+            padding: 100px;
+        }
+
+Sadece soldan 100px'lik boşluk verecektir. Toplam boyut artmayacaktır.
+
+        #kutu1 {
+            background: lightcoral;
+            padding-left: 100px;
+        }
+		
+Aynı margin'de olduğu gibi 4 değeri tek satırda verebiliriz.
+
+        #kutu1 {
+            background: lightcoral;
+            padding: 50px 100px 200px 150px;
+        }
+		
+Üstten ve alttan 50px, soldan ve sağdan 100px padding vermek için;
+
+		#kutu1 {
+            background: lightcoral;
+            padding: 50px 100px;
+        }	
+		
+Span'lar ile de padding kullanılabilir. Aynı şekilde boyut artma etkileri gözlenecektir.
+
+        span{
+            background: lightcoral;
+            display: inline-block;
+            margin: 15px;
+            width: 200px;
+            padding: 20px;
+        }
+		
+----------------------------------------------
+
+Border Kullanımı
+
+Css border html nesnelerinin etrafına kenarlık eklemek için kullanılır. 
+Border'a verebileceğimiz 3 özellik vardır. Bunlar border-style, border-width ve border-color özellikleridir.
+
+        #kutu1{
+            border: 1px solid red ;
+        }
+        #kutu2{
+            border: 3px solid red ;
+        }
+        #kutu3{
+            border-width: 5px;
+            border-style: double;
+            border-color: springgreen;
+        }
+		
+Sadece belli bir bölgeye de kenarlık ekleyebiliriz.
+
+        #kutu2{
+            border-top: 3px solid lightblue ;
+        }
+		
+Farklı tarzda kenar çizgileri de ekleyebiliriz.
+
+        #kutu2{
+            border-top: 5px solid lightblue ;
+            border-right-style: groove;
+        }
+		
+Kenardan yumuşatma-kıvrım ekleyebiliriz. Tam yuvarlak-daire şekline olana kadar bu değer arttırılabilir. Fakat width-height'in eşit olmasına dikkat edilmeli.
+
+        #kutu1{
+            border: 4px solid red;
+            border-radius: 10px;
+        }
+		
+Tam daire için;
+
+        #kutu1{
+            border: 4px solid red;
+            border-radius: 50%;
+        }
+		
+Ortak kod alanı:
+
+<body>
+
+    <div class="kutu" id="kutu1">Kutu 1</div>
+    <div class="kutu" id="kutu2">Kutu 2</div>
+    <div class="kutu" id="kutu3">Kutu 3</div>
+
+</body>
+
+---------------------------------------------------
+
+Fontlar ve Özellikleri
+
+CSS çok farklı yazı tiplerini farklı tip ve boyutlarda kullanmanıza olanak tanır.
+
+	<style>
+        body{
+            /*body etiketindeki yazıları 20px olsun.*/
+            font-size: 20px;
+        }
+        h2{
+            /*h2 özelinde 40px olsun.*/
+            font-size: 40px; 
+        }
+        p{
+            /*bir üst etikette belirtilen 20px'in iki katı olsun.*/
+            font-size: 200%;
+        }
+    </style>
+	
+200% yerine em de kullanabiliriz.
+
+        p{
+            /*bir üst etikette belirtilen 20px'in iki katı olsun.*/
+            font-size: 2em;
+        }
+		
+font-family : Font-family özelliği ile hangi font ailesini kullanmak istiyorsanız belirtmenizi sağlar.
+
+https://www.w3schools.com/css/css_font.asp
+
+Tarayıcı ilk yazı tipini çalıştıramıyorsa ikinci Times'ı onu da çalıştıramıyorsa, serif'i çalıştırsın.
+font-family: "Times New Roman", Times, serif;
+
+    <style>
+        body{
+            font-size: 30px;
+            font-family: "Times New Roman", Times, serif;
+        }
+        h2{
+            font-size: 40px; 
+        }
+        p{
+            font-size: 1.5em;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+    </style>
+	
+https://fonts.google.com/ 'dan farklı yazı tiplerine bakabiliriz.
+
+Seçtiğimiz bir yazı tipinin link'ini title'ın altına ekleyebiliriz.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-size: 30px;
+            font-family: "Times New Roman", Times, serif;
+        }
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 1.5em;
+            font-family: 'Rubik Gemstones', cursive;        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur eveniet tenetur dolorum beatae
+        veniam
+        ducimus sed soluta exercitationem voluptatem!</p>
+</body>
+
+</html>
+
+----------------------------------------------------
+
+İkon Kullanımı
+
+https://fontawesome.com/icons ve benzeri sitelerden sitemize eklemek istediğimiz icon'ları bulabiliriz.
+
+fakat öncelikler cdn kütüphanesini eklememiz lazım.
+
+https://cdnjs.com/libraries/font-awesome'dan
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+copy link tag dediğimiz gelir. Bunu title'ın altına yapıştıralım.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        i{
+		/*ikonların en güzel özelliklerinden beri boyut ayarlamalarında deforme olmamalarıdır.*/
+            font-size: 100px;
+            color: aquamarine;           
+        }
+        body{
+            font-size: 30px;
+        }
+        #apple{
+            background-color: black;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-brands fa-android"></i>
+    Android Adamdır iOS Yalan!
+    <i class="fa-brands fa-apple" id="apple"></i>
+</body>
+</html>
+
+-----------------------------------------
+
+Text Biçimlendirme
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text</title>
+    <style>
+        div{
+            width: 800px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        p{
+            font-size: 22px;
+            text-align: center;
+            /*harfler arası boşluk*/
+            letter-spacing: 2px;
+            /*kelimeler arası boşluk*/
+            word-spacing: 3px;
+            /*satır arası boşluğu belirle.*/
+            line-height: 150%;
+        }
+        h2{
+            /*bütün ilk harfler büyüsün.*/
+            text-transform: capitalize;
+            /*tüm harfler küçük harf olsun.*/
+            text-transform: lowercase;
+            /*tüm harfler büyük harf olsun.*/
+            text-transform: uppercase;
+        }
+        span{
+            font-style: italic;
+            font-weight: bold;
+        }
+        a{
+            color:darkmagenta;
+            /*linkin altı çizili olmasın.*/
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+
+        <p>Lorem ipsum, dolor sit amet <span><a href=""> consectetur adipisicing elit.</a></span> Architecto natus voluptate ea reiciendis minus et fuga eius
+            numquam id cum?</p>
+    </div>
+</body>
+</html>
+
+--------------------------------
+
+Text Hizalama
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Hizalama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Rubik 80s Fade', cursive;
+            width: 900px;
+            margin: 40px;
+        }
+        p#paragraf1{
+            text-align: right;
+        }
+        p#paragraf2{
+            text-align: center;
+        }
+        p#paragraf3{
+            text-align: left;
+            border: 2px solid gray;
+            padding: 10px;
+            /*yazımızı birden fazla sütuna bölebiliriz.*/
+            column-count: 3;
+            /*aşağıdaki yapıyı belirttiğimiz tarayıcı uyumsuzluğu varsa giderebiliriz.*/
+            --webkit-column-count: 3;
+            /*mozilla uyumluluğu sağlama almak için.*/
+            -moz-column-count: 3;
+
+            /*aralarına çizgi çekebiliriz.*/
+            column-rule: 2px solid lightskyblue;
+            --webkit-column-rule: 2px solid lightskyblue;
+            -moz-column-rule: 2px solid lightskyblue;
+        }
+        p#paragraf4{
+            /*iki yana da yasla*/
+            text-align: justify;
+            /*paragrafa girinti ver.*/
+            text-indent: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Lorem ipsum dolor sit amet.
+    </h2>
+
+    <p id="paragraf1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+    <p id="paragraf4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus laboriosam id voluptatum delectus fuga minus
+        nisi illo reiciendis ad!
+    </p>
+</body>
+</html>
+
+---------------------------------------
+
+Liste Biçimlendirme
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        ul{
+            border: 1px solid lightskyblue;
+            border-radius: 10px;
+            /*yazı ile border arasındaki padding*/
+            padding: 20px;
+            background: antiquewhite;
+            /*madde imleri kalksın.*/
+            list-style-type: none;
+        }
+        li{
+            /*yazılar arası padding*/
+            padding: 10px;
+            /*her bir maddenin zemin rengi.
+            0.5 ile de transparency ekleyebiliriz. değer değişebilir.*/
+            background: rgb(224, 255, 255, 0.5);
+            margin: 10px;
+            border-radius: 10px;
+            border-left: 10px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>C# Dünyanın En iyi Dilidir.</li>
+        <li>OOP En mantıklı Felsefedir.</li>
+        <li>Eller Kadir Kıymet Bilmiyor Anne.</li>
+    </ul>
+</body>
+</html>
+
+----------------------------
+
+Link ve Buton Biçimlendirme
+
+Link Biçimlendirme
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link ve Buton Biçimlendirme</title>
+    <style>
+
+        a{
+            color: green;
+            font-size: 20px;
+            margin: 10px;
+            /*altı çizili olmasın.*/
+            text-decoration: none;
+        }
+        a:hover{
+            /*link'in üzerine geldiğimizde neler olsun?*/
+            /*rengi kırmzı olsun*/
+            color: red;
+            /*arka plan rengi değişsin.*/
+            background: rosybrown;
+            /*yazı büyüsün.*/
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+</body>
+</html>
+
+
+Buton Biçimlendirme
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link ve Buton Biçimlendirme</title>
+    <style>
+
+        .buton{
+            padding: 10px 20px;
+            background-color: darkslategray;
+            border: none;
+            color: whitesmoke;
+            border-radius: 50px;
+        }
+
+        .buton:hover{
+            background-color: lightslategray;
+            color: black;
+        }
+
+        .buton2{
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid darkorange;
+            color: darkorange;
+            border-radius: 50px;
+        }
+
+        .buton2:hover{
+            background-color: darkorange;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+
+    <br><br><br>
+
+    <button class="buton">Anasayfa</button>
+    <button class="buton">Hakkımızda</button>
+    <button class="buton">Kategoriler</button>
+    <button class="buton">İletişim</button>
+
+    <br><br><br>
+
+    <button class="buton2">Anasayfa</button>
+    <button class="buton2">Hakkımızda</button>
+    <button class="buton2">Kategoriler</button>
+    <button class="buton2">İletişim</button>
+
+</body>
+</html>
+
+--------------------------------------------
+
+Butona İkon Ekleme
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link ve Buton Biçimlendirme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        .buton{
+            padding: 10px 20px;
+            background-color: darkslategray;
+            border: none;
+            color: whitesmoke;
+            border-radius: 50px;
+        }
+
+        .buton:hover{
+            background-color: lightslategray;
+            color: black;
+        }
+
+        .buton2{
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid darkorange;
+            color: darkorange;
+            border-radius: 50px;
+        }
+
+        .buton2:hover{
+            background-color: darkorange;
+            color: white;
+        }
+        /* ikonlar sabit renk olsun isteyebiliriz.
+        i{
+            color: gray;
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+    <a href="#">Link 4</a>
+
+    <br><br><br>
+
+    <button class="buton"><i class="fa-solid fa-house-user"></i> Anasayfa</button>
+    <button class="buton"><i class="fa-solid fa-address-card"></i> Hakkımızda</button>
+    <button class="buton"><i class="fa-solid fa-shop"></i> Kategoriler</button>
+    <button class="buton"><i class="fa-solid fa-phone"></i> İletişim</button>
+
+    <br><br><br>
+
+    <button class="buton2"><i class="fa-solid fa-house-user"></i> Anasayfa</button>
+    <button class="buton2"><i class="fa-solid fa-address-card"></i> Hakkımızda</button>
+    <button class="buton2"><i class="fa-solid fa-shop"></i> Kategoriler</button>
+    <button class="buton2"><i class="fa-solid fa-phone"></i> İletişim</button>
+
+</body>
+</html>

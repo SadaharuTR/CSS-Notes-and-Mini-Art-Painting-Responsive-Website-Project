@@ -1,0 +1,403 @@
+DERS 1: GROUP SELECTORS KULLANIMI
+
+index.css içerisindeyiz;
+
+(p) --> Tüm p etiketleri
+p{
+    color:red;
+}
+----------------
+
+(div p) --> div içerisindeki tüm p etiketleri
+div p{
+    color:red;
+}
+----------------
+
+(div,p) --> tüm div ve tüm p etiketleri, ayrı ayrı da yazabilirdik.
+div,p{
+    color: red;
+}
+-----------------------
+
+(p + div) --> p etiketinden sonra gelen div etiketi
+p + div{
+    color: red;
+}
+ya da 
+
+div + p{
+    color: red;
+}
+*/
+
+/*yalnızca container içindekiler etkilensin
+.container{
+    color: aqua;
+}
+*/
+
+/*yalnızca container içindeki div'ler etkilensin.
+.container div{
+    color: aqua;
+}
+*/
+
+/*yalnızca container içerisindeki div'in içerisindeki paragraflar etkilensin.
+.container div p{
+    color: aqua;
+}
+*/
+
+---------
+
+İlgili index.html dosyamız;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <p class="p1">container > paragraf 1</p>
+        <p class="p1">container > paragraf 2</p>
+
+        <div class="box">
+            .container > box 1
+
+            <p class="p1">container > box > paragraf 3</p>
+        </div>
+
+        <div class="box">
+            .container > box 2
+
+        </div>
+    </div>
+
+    <p>paragraf 4</p>
+    <p>paragraf 5</p>
+</body>
+
+</html>
+
+----------------------
+
+DERS 2: ATTRIBUTE SELECTORS KULLANIMI
+
+index.css;
+
+/* köşeli parantez içerisinde bir title verirsek sadece belirttiğimiz title'ı barındıran
+etiketin özelliğini değiştirmiş oluruz. */
+h2[title="baslik1"]{
+    color: red;
+}
+
+p[title="paragraf1"]{
+    color: aqua;
+    text-align: justify;
+}
+
+/*target'ı _blank olan üzerinde değişiklikler yap.*/
+a[target="_blank"]{
+    color: brown;
+}
+
+/*type attibute'u text olan input etiketi üzerinde değişiklik yap.*/
+input[type="text"]{
+    background-color: blueviolet;
+}
+
+---
+
+index.html;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <h2 title="baslik1">Başlık 1</h2>
+
+    <p title="paragraf1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ea veritatis!
+        voluptatem recusandae sint dolores earum! Laboriosam nobis itaque explicabo.</p>
+    <h2 title="baslik2">Başlık 1</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ea veritatis!
+        voluptatem recusandae sint dolores earum! Laboriosam nobis itaque explicabo.</p>
+
+    <a href="http://www.google.com">Link 1</a>
+    <a href="www.example.com" target="_blank">Link 2</a> <!-- _blank hedefi yeni sayfada aç -->
+        <br><br>
+    <input type="text" name="Name">
+    <input type="button" value="button">
+</body>
+
+</html>
+
+-------------------------------
+
+DERS 3: PSEUDO SELECTORS
+
+index.css;
+
+/* 
+CSS pseudo elements seçiciler bir öğenin belirli bir bölümüne stil vermek için 
+kullanılmaktadır.
+p::pseudo-element{} şeklinde kullanımı mevcuttur.
+
+pseudo-element kullanımında :: şeklinde iki tane iki nokta işareti ile kullanılması gerekir.
+W3C ::pseudo-element ile :pseudo-class kullanımını biririnden ayırmak için bu kullanım şeklini
+tasarlamıştır. */
+
+/* Pseudo Element */
+
+p::first-line {
+    font-weight: bold;
+    color: darkred;
+    word-spacing: 2px;
+    /*kelimelerin arasında boşluk */
+    letter-spacing: 2px;
+    /*harflerin arasında boşluk */
+}
+
+p::first-letter {
+    /*paragrafın ilk harfini büyük yapalım.*/
+    font-size: 50px;
+}
+
+/*Pseudo Class*/
+
+/*Sözde sınıf, bir elemanın özel bir durumunu tanımlamak için kullanılır. 
+Örneğin, şu amaçlarla kullanılabilir: Kullanıcının faresini üzerine getirdiğinde bir öğenin 
+stilini değiştirebilir. Ziyaret edilen ve ziyaret edilmeyen bağlantıların farklı şekillerde 
+stilize edebilir.*/
+
+/* padding: maddeler arasındaki boşluk */
+ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* ilk elemanın zemin rengini değiş */
+ul li:first-child {
+    background-color: aquamarine;
+}
+
+/* son elemanın zemin rengini değiş */
+ul li:last-child {
+    background-color: bisque;
+}
+
+/*ziyaret edilen sitenin-linkin rengini değiştir.*/
+a:visited{
+    color: pink;
+}
+
+/*üzerine gelindiğinde linkin rengini ve zemin rengini değiştir.*/
+a:hover{
+    color: white;
+    background-color: blue;
+}
+
+a{
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    width:100px;
+    margin-bottom: 10px;
+}
+
+---
+
+index.html;
+
+<!-- DERS 3: PSEUDO SELECTORS -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <h2 title="baslik1">Başlık 1</h2>
+
+    <p title="paragraf1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ea veritatis!
+        voluptatem recusandae sint dolores earum! Laboriosam nobis itaque explicabo.</p>
+    <h2 title="baslik2">Başlık 1</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ea veritatis!
+        voluptatem recusandae sint dolores earum! Laboriosam nobis itaque explicabo.</p>
+
+    <a href="http://www.google.com">Link 1</a>
+    <a href="www.example.com" target="_blank">Link 2</a> <!-- _blank hedefi yeni sayfada aç -->
+        <br><br>
+    <input type="text" name="Name">
+    <input type="button" value="button">
+
+    
+    <ul>
+        <li>Madde 1</li>
+        <li>Madde 2</li>
+        <li>Madde 3</li>
+        <li>Madde 4</li>
+    </ul>
+</body>
+
+---------------------------------------
+
+DERS 4: CSS'de Inherit(Miras Alma)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Inherit</title>
+    <style>
+        /* Body'de değişiklik yapmamıza rağmen Link1 ve Link2 bundan etkilenmeyecektir.
+        bunu Miras Alma yoluyla çözebiliriz. */
+        body{
+            color:cadetblue;
+        }
+
+        ul{
+            color:coral;
+        }
+
+        /*bütün li'ler blueviolet olacak fakat ilk li inherit aldığı için farklı renkte
+        olacaktır.*/
+        li{
+            color: blueviolet;
+        }
+		
+        /*Link özelinde değişiklikler belirterek de bu durumu çözebiliriz.
+        a{
+            color:cyan;
+        }
+        Fakat Body yani üst taraftan miras alma yoluyla yapmamız gerekirse;
+        */
+        /*inherit kullandığımızda bir üst etiketin özelliklerini miras alacaktır.
+        yani burada body'nin color:cadetblue;'sunu.*/
+        a{
+            /* color:inherit; */
+            color:brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eius soluta blanditiis similique, ipsam tempore
+        delectus aliquam facere a alias?</p>
+
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eius soluta blanditiis similique, ipsam tempore
+        delectus aliquam facere a alias?</p>
+
+        <a href="#">Link 1</a>
+        <a  style="color:inherit;" href="#">Link 2</a>
+
+        <ul>
+            <!-- Madde 1 üst etiket ulan ul'den miras aldığı için turuncu olacaktır. -->
+            <li style="color:inherit;">Madde 1</li>
+            <li>Madde 2</li>
+            <li>Madde 3</li>
+            <li>Madde 4</li>
+            <li>Madde 5</li>
+        </ul>
+</body>
+
+</html>
+
+
+-----------------------
+
+DERS 5: Div Kullanımı
+
+Div, html sayfasında bir bölüm oluşturmak istediğimizde kullanılır. 
+
+<div> etiketi block etikettir yani bir genişlik değeri (width) vermediğimiz sürece satırı
+olduğu gibi kaplar ve yükseklik olarakta içerisinde bulunan öğelerin sahip olduğu yükseklik 
+kadar bir yüksekliğe sahip olurlar.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs</title>
+    <style>
+        /* ilgili Id'ye sahip div içerisinde artık hangi elemanı oluşturursak div'e verdiğimiz
+        css özelliklerini kapsayacaktır. Aynı şekilde boyut, hizalama vs. özellikleri de
+        belirleyebiliriz. */
+        #bolum1 {
+            color: cornflowerblue;
+            font-size: 20px;
+            background-color: blanchedalmond;
+            width: 100%;
+            height: 200px;
+            /* sığmayan-taşan yazıları overflow: scrool özelliği ekleyerek belirli bir alanda kaydırarak
+            kullanabiliriz. */
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bolum1">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <li>Madde 1</li>
+        <li>Madde 2</li>
+        <li>Madde 3</li>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+    </div>
+
+    <div id="bolum2">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe
+            aliquid voluptatem sequi assumenda?</p>
+    </div>
+</body>
+
+</html>

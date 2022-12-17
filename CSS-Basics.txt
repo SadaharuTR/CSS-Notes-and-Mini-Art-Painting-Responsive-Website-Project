@@ -1,0 +1,321 @@
+CSS NEDİR?
+
+- Cascading Style Sheets, HTML'e ek olarak metin ve format biçimlendirme alanında fazladan 
+olanaklar sunan bir işaretleme dilidir.
+
+Internal(Dahili) CSS Kullanımı
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS</title>
+<!-- dahili css yani internal css ekleyebilmek için; -->
+    <style>
+        /* bu şekilde sayfamızda kullandığımız bütün h1 etiketlerini etkilemiş oluyoruz. */
+        h1 {
+            color:coral;
+            font-size: 40px;
+        }
+
+        h3{ /*aynı şekilde h3 etiketlerini-başlıklarını etkilemiş oluruz. */
+            color:brown;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        p{
+            color: chocolate;
+            font-size: 15px;
+            /*text-align: justify; iki yana yasla*/
+            text-align: center;
+        }
+        /*yapılan değişiklikler sadece bu html dosyası için geçerli olacaktır.*/
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, aliquam! Enim sunt, accusantium a cumque
+        laboriosam saepe quos dignissimos eaque.</p>
+
+    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, aliquam! Enim sunt, accusantium a cumque
+        laboriosam saepe quos dignissimos eaque.</p>
+
+    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, aliquam! Enim sunt, accusantium a cumque
+        laboriosam saepe quos dignissimos eaque.</p>
+
+</body>
+
+</html>
+
+------------------------------
+
+Inline CSS Kullanımı
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS</title>
+
+    <style>
+        /*kapsayıcı değişiklikler yaptık. Fakat herhangi bir etikette bireysel
+        değişiklikler yapmak istersek;*/
+        h2{
+            color: gray;
+            font-size: 35px;
+            text-align: center;
+        }
+        p{
+            color:deepskyblue;
+            font-size: 25px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- ilgili başlığa gidip inline css de ekleyebiliriz. Değişiklikler sadece bu başlıkta
+    geçerli olur. -->
+    <h2 style="border: 2px solid blue;">Lorem ipsum dolor sit amet.</h2>
+
+    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat exercitationem rerum optio pariatur
+        ipsam. Est sunt aperiam reiciendis blanditiis!</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat exercitationem rerum optio pariatur
+        ipsam. Est sunt aperiam reiciendis blanditiis!</p>
+        
+    <h2>Lorem ipsum dolor sit amet.</h2>
+
+    <h2 style="color:blueviolet; font-size: 20px;">Lorem ipsum dolor sit amet.</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat exercitationem rerum optio pariatur
+        ipsam. Est sunt aperiam reiciendis blanditiis!</p>
+        
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <!-- başlık özelinde inline css belirttiğimizde internal css'de de o özellik varsa ezilecektir.
+    inline css daha öncelikli olacaktır. -->
+
+    <!-- internal da inline css'de sadece kullanıldıkları sayfada geçerlidir. -->
+</body>
+
+</html>
+
+---------------------------------
+
+External CSS Kullanımı
+
+style.css içerisindeyiz;
+
+/*link yardımıyla oluşturduğumuz style.css'i istediğimiz sayfaya bağladığımızda
+o sayfaların tümünde bu dosya içindeki değişiklikler uygulanacaktır.
+hakkimizda,iletisim,index sayfalarına uygulayalım.*/
+
+h2{
+    color: green;
+    font-size: 30px;
+    text-align: center;
+}
+p{
+    color: darkgoldenrod;
+    font-size: 20px;
+    text-align: center;
+}
+
+---
+
+hakkimizda.html;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+</body>
+
+</html>
+
+---
+
+iletisim.html;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+</body>
+
+</html>
+
+---
+
+index.html;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+
+	<!-- istersek style.css'i kullanabilir ya da index.html'e özel index.css oluşturup
+		 external css olarak kullanabiliriz.-->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- external css de kullansak inline css'in daima önceliği vardır. -->
+    <h2 style="color: blueviolet;">Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident iusto deserunt ex distinctio dolorem voluptas
+        possimus obcaecati praesentium blanditiis ipsam?</p>
+</body>
+
+</html>
+
+----
+
+index.css;
+
+h2{
+    color: brown;
+    font-size: 20px;
+    text-align: justify;
+}
+p{
+    color: darkgoldenrod;
+    font-size: 20px;
+    text-align: center;
+}
+
+-----
+
+ID ve Class Kullanımı
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID ve Sınıf Kullanımı</title>
+    <style>
+        p{
+            color:blue;
+            font: 30px;
+        }
+
+        /*etiketleri class olarak kullanıp değişiklik yapacağımız etikette çağırabiliriz.
+        istediğimiz kadar etikette class etiketlerini kullanabiliriz.*/
+        .kirmizi{
+            color:crimson;
+        }
+
+        .sari
+        {
+            color: yellowgreen;
+            font-size: 35px;
+        }
+
+        .font15{
+            font-size: 15px;
+        }
+
+        /*Id tanımlayarakta aynı işlemleri geçekleştirebiliriz.*/
+        #baslik{
+            color:darkolivegreen;
+            font-size: 40px;
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="baslik">Lorem ipsum dolor sit amet.</h1>
+    <!-- iki tane aynı isimde Id'li başlık kullanamayız. Spesifik Id'ler olmalıdır.
+    <h1 id="baslik">Lorem ipsum dolor sit amet.</h1> -->
+
+    <!-- class attribute'u ile yukarıda sınıf içerisinde belirttiğimiz etiket özelliklerini çağırabiliriz. -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p style="color: crimson;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="font15">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="kirmizi">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="sari">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+</body>
+</html>

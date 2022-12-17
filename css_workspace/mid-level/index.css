@@ -1,0 +1,152 @@
+
+
+/*-----------------------------------------------------*/
+
+/*DERS 3: PSEUDO SELECTORS*/
+/* 
+CSS pseudo elements seçiciler bir öğenin belirli bir bölümüne stil vermek için 
+kullanılmaktadır.
+p::pseudo-element{} şeklinde kullanımı mevcuttur.
+
+pseudo-element kullanımında :: şeklinde iki tane iki nokta işareti ile kullanılması gerekir.
+W3C ::pseudo-element ile :pseudo-class kullanımını biririnden ayırmak için bu kullanım şeklini
+tasarlamıştır. */
+
+/* Pseudo Element */
+
+/*
+p::first-line {
+    font-weight: bold;
+    color: darkred;
+    word-spacing: 2px;
+    //kelimelerin arasında boşluk 
+    letter-spacing: 2px;
+    //harflerin arasında boşluk 
+}
+*/
+/*
+p::first-letter {
+    //paragrafın ilk harfini büyük yapalım.
+    font-size: 50px;
+}
+*/
+/*Pseudo Class*/
+
+/*Sözde sınıf, bir elemanın özel bir durumunu tanımlamak için kullanılır. 
+Örneğin, şu amaçlarla kullanılabilir: Kullanıcının faresini üzerine getirdiğinde bir öğenin 
+stilini değiştirebilir. Ziyaret edilen ve ziyaret edilmeyen bağlantıların farklı şekillerde 
+stilize edebilir.*/
+
+/* padding: maddeler arasındaki boşluk */
+/* ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+} */
+
+/* ilk elemanın zemin rengini değiş */
+/* ul li:first-child {
+    background-color: aquamarine;
+} */
+
+/* son elemanın zemin rengini değiş */
+/* ul li:last-child {
+    background-color: bisque;
+} */
+
+/*ziyaret edilen sitenin-linkin rengini değiştir.*/
+/* a:visited{
+    color: pink;
+} */
+
+/*üzerine gelindiğinde linkin rengini ve zemin rengini değiştir.*/
+/* a:hover{
+    color: white;
+    background-color: blue;
+}
+
+a{
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    width:100px;
+    margin-bottom: 10px;
+} */
+
+
+/*-----------------------------------------------------*/
+
+/* DERS 2: ATTRIBUTE SELECTORS KULLANIMI */
+
+/* köşeli parantez içerisinde bir title verirsek sadece belirttiğimiz title'ı barındıran
+etiketin özelliğini değiştirmiş oluruz. */
+/* h2[title="baslik1"]{
+    color: red;
+}
+
+p[title="paragraf1"]{
+    color: aqua;
+    text-align: justify;
+}
+
+/*target'ı _blank olan üzerinde değişiklikler yap.
+a[target="_blank"]{
+    color: brown;
+}
+*/
+
+/*type attibute'u text olan input etiketi üzerinde değişiklik yap.
+input[type="text"]{
+    background-color: blueviolet;
+} 
+*/
+
+/*----------------------------------------------------*/
+
+/* DERS 1: GROUP SELECTORS KULLANIMI
+
+(p) --> Tüm p etiketleri
+p{
+    color:red;
+}
+----------------
+
+(div p) --> div içerisindeki tüm p etiketleri
+div p{
+    color:red;
+}
+----------------
+
+(div,p) --> tüm div ve tüm p etiketleri, ayrı ayrı da yazabilirdik.
+div,p{
+    color: red;
+}
+-----------------------
+
+(p + div) --> p etiketinden sonra gelen div etiketi
+p + div{
+    color: red;
+}
+ya da 
+
+div + p{
+    color: red;
+}
+*/
+
+/*yalnızca container içindekiler etkilensin
+.container{
+    color: aqua;
+}
+*/
+
+/*yalnızca container içindeki div'ler etkilensin.
+.container div{
+    color: aqua;
+}
+*/
+
+/*yalnızca container içerisindeki div'in içerisindeki paragraflar etkilensin.
+.container div p{
+    color: aqua;
+}
+*/

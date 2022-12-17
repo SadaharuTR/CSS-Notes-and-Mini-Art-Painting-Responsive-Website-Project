@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID ve Sınıf Kullanımı</title>
+    <style>
+        p{
+            color:blue;
+            font: 30px;
+        }
+
+        /*etiketleri class olarak kullanıp değişiklik yapacağımız etikette çağırabiliriz.
+        istediğimiz kadar etikette class etiketlerini kullanabiliriz.*/
+        .kirmizi{
+            color:crimson;
+        }
+
+        .sari
+        {
+            color: yellowgreen;
+            font-size: 35px;
+        }
+
+        .font15{
+            font-size: 15px;
+        }
+
+        /*Id tanımlayarakta aynı işlemleri geçekleştirebiliriz.*/
+        #baslik{
+            color:darkolivegreen;
+            font-size: 40px;
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="baslik">Lorem ipsum dolor sit amet.</h1>
+    <!-- iki tane aynı isimde Id'li başlık kullanamayız. Spesifik Id'ler olmalıdır.
+    <h1 id="baslik">Lorem ipsum dolor sit amet.</h1> -->
+
+    <!-- class attribute'u ile yukarıda sınıf içerisinde belirttiğimiz etiket özelliklerini çağırabiliriz. -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p style="color: crimson;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="font15">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="kirmizi">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="sari">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+</body>
+</html>

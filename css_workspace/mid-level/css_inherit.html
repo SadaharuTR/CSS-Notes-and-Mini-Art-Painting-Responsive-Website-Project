@@ -1,0 +1,66 @@
+DERS 4: CSS'de Inherit(Miras Alma)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Inherit</title>
+    <style>
+        /* Body'de değişiklik yapmamıza rağmen Link1 ve Link2 bundan etkilenmeyecektir.
+        bunu Miras Alma yoluyla çözebiliriz. */
+        body{
+            color:cadetblue;
+        }
+
+        ul{
+            color:coral;
+        }
+
+        /*bütün li'ler blue violet olacak fakat ilk li inherit aldığı için farklı renkte
+        olacaktır.*/
+        li{
+            color: blueviolet;
+        }
+        /*Link özelinde değişiklikler belirterek de bu durumu çözebiliriz.
+        a{
+            color:cyan;
+        }
+        Fakat Body yani üst taraftan miras alma yoluyla yapmamız gerekirse;
+        */
+        /*inherit kullandığımızda bir üst etiketin özelliklerini miras alacaktır.
+        yani burada body'nin color:cadetblue;'sunu.*/
+        a{
+            /* color:inherit; */
+            color:brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eius soluta blanditiis similique, ipsam tempore
+        delectus aliquam facere a alias?</p>
+
+    <h1>Lorem ipsum dolor sit amet.</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eius soluta blanditiis similique, ipsam tempore
+        delectus aliquam facere a alias?</p>
+
+        <a href="#">Link 1</a>
+        <a style="color:inherit;" href="#">Link 2</a>
+
+        <ul>
+            <!-- Madde 1 üst etiket ulan ul'den miras aldığı için turuncu olacaktır. -->
+            <li style="color:inherit;">Madde 1</li>
+            <li>Madde 2</li>
+            <li>Madde 3</li>
+            <li>Madde 4</li>
+            <li>Madde 5</li>
+        </ul>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+/*link yardımıyla oluşturduğumuz style.css'i istediğimiz sayfaya bağladığımızda
+o sayfaların tümünde bu dosya içindeki değişiklikler uygulanacaktır.
+hakkimizda,iletisim,index sayfalarına uygulayalım.*/
+
+h2{
+    color: green;
+    font-size: 30px;
+    text-align: center;
+}
+p{
+    color: darkgoldenrod;
+    font-size: 20px;
+    text-align: center;
+}

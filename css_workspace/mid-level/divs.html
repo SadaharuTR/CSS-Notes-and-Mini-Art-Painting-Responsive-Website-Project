@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs</title>
+    <style>
+        /* ilgili Id'ye sahip div içerisinde artık hangi elemanı oluşturursak div'e verdiğimiz
+        css özelliklerini kapsayacaktır. Aynı şekilde boyut, hizalama vs. özellikleri de
+        belirleyebiliriz. */
+        #bolum1 {
+            color: cornflowerblue;
+            font-size: 20px;
+            background-color: blanchedalmond;
+            width: 100%;
+            height: 200px;
+            /* sığmayan-taşan yazıları overflow: scrool özelliği ekleyerek belirli bir alanda kaydırarak
+            kullanabiliriz. */
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bolum1">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <li>Madde 1</li>
+        <li>Madde 2</li>
+        <li>Madde 3</li>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe aliquid voluptatem sequi assumenda?
+        </p>
+    </div>
+
+    <div id="bolum2">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum modi voluptatum eaque quasi, fugit iure.
+            Saepe
+            aliquid voluptatem sequi assumenda?</p>
+    </div>
+</body>
+
+</html>
